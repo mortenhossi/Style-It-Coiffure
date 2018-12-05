@@ -51,9 +51,7 @@ function navbg() {
 
 // luk mobil nav når man trykker på en af links
 $(function(){
-     var navMain = $(".navbar-collapse"); // avoid dependency on #id
-     // "a:not([data-toggle])" - to avoid issues caused
-     // when you have dropdown inside navbar
+     var navMain = $(".navbar-collapse");
      navMain.on("click", "a:not([data-toggle])", null, function () {
          navMain.collapse('hide');
      });

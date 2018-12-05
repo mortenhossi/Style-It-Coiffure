@@ -49,7 +49,10 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html#kontakt">Kontakt</a>
             </li>
-            <li class="nav-item mobilfrisør rounded">
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item mobilfrisør mobilfrisørclicked rounded">
               <a class="nav-link" href="mobilfrisør.html">Mobilfrisør</a>
             </li>
           </ul>
@@ -58,20 +61,20 @@
     </nav>
 
     <header class="mobilhero d-flex justify-content-center align-items-center">
-      <div class="container" data-aos="fade-up" data-aos-delay="300">
-          <div class="mobilheadline text-white text-center mb-2">
+      <div class="container" data-aos="fade" data-aos-delay="300">
+          <div class="mobilheadline text-white text-center mb-5">
             <h1>Mobilfrisør i hele Odense</h1>
             <h2 class="font-weight-light">Du booker tid, service og lokation hvorefter vi kommer til dig</h2>
           </div>
 
           <div class="text-white mx-auto">
             <div class="CTA-above p-3 rounded w-50 mx-auto">
-              <ul>
+              <ul class="">
                 <li>Selvvalgt lokation</li>
                 <li>Undgå besværlig transport</li>
                 <li>Aftalt tidspunkt</li>
               </ul>
-              <a href="#booking" class="btn CTA w-100">Book en tid</a>
+              <a href="#booking" class="btn CTA w-100 d-block"><b>Book en tid</b></a>
             </div>
           </div>
 
@@ -91,11 +94,11 @@
     <main>
       <section class="omkonceptet container pt-5 mb-5" id="omkonceptet">
         <div class="row flexmd">
-          <div class="col-md">
+          <div class="col-md" data-aos="fade-right">
               <img src="assets/images/mobilomos.png" alt="Billede af Mufak og Josefine" class="omkonceptetimg pt-2">
           </div>
 
-          <div class="col-md mb-3">
+          <div class="col-md mb-3" data-aos="fade-left">
               <h2 class="pt-2">Om Konceptet</h2>
               <hr>
               <p class="font-weight-bold">Er du træt efter en lang dag? Døjer du med nogle skavanker der forhindrer dig i at bevæge dig ordentligt over længere distancer? Har du en for travl hverdag til at tage til frisøren? Så har vi løsningen til dig!</p>
@@ -206,11 +209,11 @@
           <hr class="mx-auto">
 
           <div class="row pt-5 pb-3">
-            <div class="col-md mb-3">
+            <div class="col-md mb-3" data-aos="fade-right">
               <img src="assets/images/mufaklille.png" alt="Billede af Mufak" class="mobilperimg rounded">
             </div>
 
-            <div class="col-md">
+            <div class="col-md" data-aos="fade-left">
               <h3>Mufak Khalifa</h3>
               <h4 class="greencolor">Ejer</h4>
               <p>Mufak Khalifa er 25 år og er indehaver af Style It Coiffure. Han etablerede frisørsalonen i 2015 og har lige siden udlevet sin drøm om at eje en frisørsalon. Mufak er udlært i 2012 fra Centersalonen i Rosengårdcentret. Mode og skønhed har altid været en stor fascination hos Mufak, således har han valgt at blive frisør samt gå sine egne veje. Han tilbyder professionel styling og pleje til både mænd og kvinder. Mufak er en venlig sjæl, som byder dig velkommen med åbne arme. Han gør altid sit bedste for at tilfredsstille dig og med Mufak kan du altid få en rolig og behagelig samtale.</p>
@@ -221,13 +224,13 @@
           <div class="blackbg">
             <div class="container text-white pt-3 pb-3">
               <div class="row mt-5 flexmd">
-                <div class="col-md">
+                <div class="col-md" data-aos="fade-right">
                   <h3>Josefine Pawsø</h3>
                   <h4 class="greencolor">Frisør</h4>
                   <p>Josefine Pawsø er 25 år og er frisør hos Style It Coiffure. Hun er udlært i 2017 fra Argento frisørsalon i Rosengårdcenteret. Josefine har en passion for skønhed og mode og hun stræber efter løbende fornyelse på hendes kunder. Josefine er velkendt for sit høje humør og har altid et glimt i øjet for forandring. Hun er nem at føre en samtale med, og vægter dine behov og ønsker højest. Josefine tilbyder en professionel, kreativ og tilfredsstillende behandling til alle aldre og køn. Med Josefine vil du altid føle dig velkommen og du vil gå fra med en forløsende og unik oplevelse. </p>
                 </div>
 
-                <div class="col-md mb-3">
+                <div class="col-md mb-3" data-aos="fade-left">
                   <img src="assets/images/josefinelille.png" alt="Billede af Josefine" class="mobilperimg rounded">
                 </div>
               </div>  <!-- slut row -->
@@ -331,10 +334,46 @@
             <input type="time" name="time" value="" class="form-control">
           </div>
 
-          <button type="submit" name="button" class="btn w-100 mt-4 mb-5 mobilbtn">Book din tid</button>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" checked>
+            <label class="form-check-label" for="nyhedsbrev">Tilmeld til nyhedsbrev</label>
+          </div>
+
+          <button type="submit" name="button" class="btn w-100 mt-4 mb-5 mobilbtn" data-aos="fade-up"><b>Book din tid</b></button>
         </form>
       </section>
     </main>
+
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="mt-4 col-sm-3">
+            <h5>Kontakt</h5>
+            <p><i class="fas fa-map-marker-alt mr-2"></i>Vesterbro 34 Odense, Denmark</p>
+            <p class="text-white"><i class="fas fa-phone mr-2"></i><a class="text-white" href="tel: +4522294611">22294611</a></p>
+          </div>
+
+          <div class="mt-4 col-sm-3">
+            <h5>Sociale Medier</h5>
+            <a href="https://www.facebook.com/StyleitC/" target="_blank" class="d-block mt-2"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/styleitc/" target="_blank" class="d-block mt-2"><i class="fab fa-instagram"></i></a>
+          </div>
+
+          <div class="mt-4 col-sm-3">
+            <h5>Åbningstider</h5>
+            <ul class="åbningstider-list">
+              <li>Mandag: 9:30-17:30</li>
+              <li>Tirsdag: 9:30-17:30</li>
+              <li>Onsdag: 9:30-17:30</li>
+              <li>Torsdag: 9:30-17:30</li>
+              <li>Fredag: 9:30-17:30</li>
+              <li>Lørdag: 9:30-14:30</li>
+              <li>Søndag: Lukket</li>
+            </ul>
+          </div>
+        </div> <!-- slut row -->
+      </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

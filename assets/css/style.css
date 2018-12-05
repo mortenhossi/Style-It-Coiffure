@@ -6,6 +6,7 @@ body {
   color: #222831;
   background: #EEEEEE;
   overflow-x: hidden;
+  position: relative;
 }
 
 hr {
@@ -34,6 +35,10 @@ hr {
   background: #222831;
 }
 
+.graybg {
+  background: #393E46;
+}
+
 .CTA {
   background: #00ADB5;
   color: white;
@@ -42,6 +47,10 @@ hr {
 
 .CTA:hover {
   background: white;
+  color: #00ADB5;
+}
+
+.active {
   color: #00ADB5;
 }
 
@@ -77,6 +86,14 @@ button:focus {
   color: #00ADB5;
 }
 
+.mobilfrisørclicked {
+  background: white;
+}
+
+.mobilfrisørclicked a {
+  color: #00ADB5;
+}
+
 .mobilfrisørColor {
   color: #00ADB5;
 }
@@ -106,7 +123,9 @@ header {
 
 /* Om Os styles
 --------------------------------------- */
-
+.omsospic {
+  width: 100%;
+}
 
 /* Åbningstider styles
 --------------------------------------- */
@@ -139,7 +158,7 @@ header {
 }
 
 .priser-text {
-  background: #D6D6D6;
+  background: #F7F7F7;
 }
 
 .pricebtn {
@@ -328,6 +347,9 @@ video {
   .form {
     width: 100%;
   }
+  .blog-container {
+    width: 90% !important;
+  }
 }
 
 /* Footer styles
@@ -467,5 +489,17 @@ footer {
 
 .mobilbtn:hover {
   background: #222831;
+}
 
+/* blog styles
+--------------------------------------- */
+.bloghero {
+  width: 100vw;
+  height: 80vh;
+  background-image: url(../images/blogbg.png);
+}
+
+.bloginfo {
+  width: 266px;
+  height: 150px;
 }
