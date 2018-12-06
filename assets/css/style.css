@@ -98,6 +98,15 @@ button:focus {
   color: #00ADB5;
 }
 
+.logo {
+  display: block;
+  width: 20%;
+}
+
+.logo img {
+  width: 100%;
+}
+
 /* header styles
 --------------------------------------- */
 header {
@@ -164,6 +173,10 @@ header {
 .pricebtn {
   user-select: none;
   cursor: pointer;
+}
+
+.priser-container {
+  width: 75%;
 }
 
 
@@ -350,6 +363,10 @@ video {
   .blog-container {
     width: 90% !important;
   }
+
+  .priser-container {
+    width: 100%;
+  }
 }
 
 /* Footer styles
@@ -414,12 +431,6 @@ footer {
   width: 30%;
 }
 
-@media screen and (max-width: 550px) {
-  .CTA-above {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 450px) {
   .mobilheadline {
     padding-top: 30px;
@@ -448,6 +459,19 @@ footer {
     display: flex;
     flex-direction: column-reverse;
   }
+
+  .CTA-above {
+    width: 100%;
+  }
+}
+
+.udfyldform {
+  color: #00ADB5;
+  transition: 200ms ease;
+}
+
+.udfyldform:hover {
+  color: white;
 }
 
 /* mobil åbningstider styles

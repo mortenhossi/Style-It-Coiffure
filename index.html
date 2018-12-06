@@ -11,16 +11,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon-32x32.png"/>
     <!-- Animate on scroll libary css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <title>Style It Coiffure</title>
+    <title>Style It Coiffure | Din frisør i hjertet af Odense</title>
   </head>
   <body onload="personaleModal(); navbg(); accordion(); jssor_1_slider_init();" data-spy="scroll" data-target=".navbar">
 
     <nav class="navbar navbar-expand-lg fixed-top mobilnav" id="nav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Style It Coiffure</a>
+        <a href="#hjem" class="d-block logo"><img src="assets/images/logo.png" alt="Style It Coiffure Logo" class=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span><i class="fas fa-bars"></i></span>
         </button>
@@ -78,6 +80,7 @@
                   <li>Fordelagtige priser</li>
                 </ul>
                 <a href="#kontakt" class="btn CTA w-100"><b>Bestil tid</b></a>
+                <p class="text-center text-secondary">Studierabat 20 % (gælder ikke for farve)</p>
               </div>
             </div>
 
@@ -137,8 +140,9 @@
         <div data-aos="fade-up">
           <h2 class="text-center pt-2">Priser</h2>
           <hr class="mx-auto">
+          <h4 class="text-center">Studierabat 20 % (gælder ikke for farve)</h4>
 
-          <div class="w-75 mx-auto mt-4">
+          <div class="mx-auto mt-4 priser-container">
             <div class="priser d-flex">
               <h4 class="p-2 pl-3">Dame</h4>
               <h4 class="ml-auto p-2 pr-3 pricebtn">+</h4>
@@ -209,7 +213,7 @@
             </div>
           </div>
 
-          <div class="w-75 mx-auto mt-4">
+          <div class="mx-auto mt-4 priser-container">
             <div class="priser d-flex">
               <h4 class="p-2 pl-3">Herre</h4>
               <h4 class="ml-auto p-2 pr-3 pricebtn">+</h4>
@@ -242,7 +246,7 @@
             </div>
           </div>
 
-          <div class="w-75 mx-auto mt-4">
+          <div class="mx-auto mt-4 priser-container">
             <div class="priser d-flex">
               <h4 class="p-2 pl-3">Børn</h4>
               <h4 class="ml-auto p-2 pr-3 pricebtn">+</h4>
@@ -456,17 +460,20 @@
               <form class="form mt-5 text-white">
                 <div class="form-group">
                   <label for="navn">Fulde navn:</label>
-                  <input type="text" name="navn" value="" placeholder="Skriv navn her" class="form-control">
+                  <input type="text" name="navn" value="" placeholder="Skriv navn her" required class="form-control navninput">
+                  <p class="navnerror text-danger"></p>
                 </div>
 
                 <div class="form-group">
                   <label for="email">E-mail:</label>
-                  <input type="email" name="email" value="" placeholder="name@example.com" class="form-control">
+                  <input type="email" name="email" value="" placeholder="name@example.com" required class="form-control emailinput">
+                  <p class="emailerror text-danger"></p>
                 </div>
 
                 <div class="form-group">
                   <label for="besked">Besked:</label>
-                  <textarea name="name" rows="10" placeholder="Skriv din besked her" class="form-control"></textarea>
+                  <textarea name="name" rows="10" placeholder="Skriv din besked her" required class="form-control beskedinput"></textarea>
+                  <p class="beskederror text-danger"></p>
                 </div>
 
                 <div class="form-group form-check">
@@ -474,7 +481,8 @@
                   <label class="form-check-label" for="nyhedsbrev">Tilmeld til nyhedsbrev</label>
                 </div>
 
-                <button type="submit" name="button" class="btn w-100 mt-4 mb-5 contactbtn">Send besked</button>
+                <button type="submit" name="button" class="btn w-100 mt-4 contactbtn">Send besked</button>
+                <p class="ikkeudfyldt text-danger mb-5"></p>
               </form>
             </div>
           </div> <!-- slut row -->

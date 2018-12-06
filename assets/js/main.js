@@ -146,3 +146,79 @@ function valgAfService() {
     }
   });
 }
+
+function mobilbooking() {
+  // form validation til mobilfrisør siden
+  $(".mobilbtn").click(function() {
+    // hvis der ingen value er i nummer, hvis de ikke bruger tal, eller hvis length ikke er 8.
+    if ($(".nummermobil").val() === "") {
+      event.preventDefault();
+      $(".nummermobilerror").html("Skriv venligst telefonnummer");
+      $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+    } else if (isNaN($(".nummermobil").val())) {
+      event.preventDefault();
+      $(".nummermobilerror").html("Skriv venligst telefonnummer");
+      $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+    } else if ($(".nummermobil").val().length != 8) {
+      event.preventDefault();
+      $(".nummermobilerror").html("Skriv venligst telefonnummer");
+      $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+    } else {
+      $(".nummermobilerror").html("");
+    }
+
+    // bliver nødt til at bruge normal javascript, da jQuery returner null her
+    let service = document.querySelector("#valgafservice").value;
+
+    if (service === "none") {
+      // hvis de ikke har valgt service
+      event.preventDefault();
+      $(".serviceerror").html("Vælg venligst service");
+      $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+    } else {
+      $(".serviceerror").html("");
+    }
+
+    if ($("#valgafservice").val() === "enPerson") {
+      // hvis service er valgt til en person, check om de har trykket på en af radios
+      if (!$("#dame-radio").is(":checked") && !$("#herre-radio").is(":checked") && !$("#barn-radio").is(":checked")) {
+        event.preventDefault();
+        $(".serviceerror").html("Vælg venligst service");
+        $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+      } else {
+        $(".serviceerror").html("");
+      }
+    }
+
+    if ($("#valgafservice").val() === "familie") {
+      // hvis service er valgt til familie, check om de har trykket på en af radios
+      if (!$("#3-5Personer").is(":checked") && !$("#6-8Personer").is(":checked")) {
+        event.preventDefault();
+        $(".serviceerror").html("Vælg venligst service");
+        $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+      } else {
+        $(".serviceerror").html("");
+      }
+    }
+
+    if ($("#valgafservice").val() === "institution") {
+      // hvis service er valgt til institution, check om de har trykket på en af radios
+      if (!$("#10-20Personer").is(":checked") && !$("#21-30Personer").is(":checked")) {
+        event.preventDefault();
+        $(".serviceerror").html("Vælg venligst service");
+        $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+      } else {
+        $(".serviceerror").html("");
+      }
+    }
+
+    if ($(".formlokation").val() === "") {
+      // check om de har valgt en lokation
+      event.preventDefault();
+      $(".lokationerorr").html("Skriv venligst lokation");
+      $(".mobilikkeudfyldt").html("Udfyld venligst formularen");
+    } else {
+      $(".lokationerorr").html("");
+    }
+  });
+}

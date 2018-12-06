@@ -11,15 +11,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon-32x32.png"/>
     <!-- Animate on scroll libary css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Mobilfrisør | Style It Coiffure</title>
   </head>
-  <body onload="valgAfService();">
+  <body onload="valgAfService(); mobilbooking();">
     <nav class="navbar navbar-expand-lg fixed-top mobilnav" id="nav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Style It Coiffure</a>
+        <a href="index.html" class="d-block logo"><img src="assets/images/logo.png" alt="Style It Coiffure Logo" class=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span><i class="fas fa-bars"></i></span>
         </button>
@@ -68,13 +70,14 @@
           </div>
 
           <div class="text-white mx-auto">
-            <div class="CTA-above p-3 rounded w-50 mx-auto">
+            <div class="CTA-above p-3 rounded mx-auto">
               <ul class="">
                 <li>Selvvalgt lokation</li>
                 <li>Undgå besværlig transport</li>
                 <li>Aftalt tidspunkt</li>
               </ul>
               <a href="#booking" class="btn CTA w-100 d-block"><b>Book en tid</b></a>
+              <p class="text-center text-secondary">Studierabat 20 % (gælder ikke for farve)</p>
             </div>
           </div>
 
@@ -120,18 +123,20 @@
                 <p class="text-center">Privat klipning ved den lokation du ønsker</p>
                 <div class="d-flex servicespriser">
                   <p class="font-weight-bold">Dame</p>
-                  <p class="ml-auto">150,-</p>
+                  <p class="ml-auto">375,-</p>
                 </div>
                 <hr class="w-100 serviceshr">
                 <div class="d-flex servicespriser">
                   <p class="font-weight-bold">Herre</p>
-                  <p class="ml-auto">150,-</p>
+                  <p class="ml-auto">275,-</p>
                 </div>
                 <hr class="w-100 serviceshr">
                 <div class="d-flex servicespriser">
                   <p class="font-weight-bold">Barn</p>
-                  <p class="ml-auto">150,-</p>
+                  <p class="ml-auto">Fra 155,-</p>
                 </div>
+                <hr class="w-100 serviceshr">
+                <p class="text-center">Kontakt os for mere information.</p>
               </div>
             </div>
 
@@ -141,14 +146,16 @@
                 <p class="text-center">Familie klipning ved den lokation du ønsker</p>
                 <div class="d-flex servicespriser">
                   <p class="font-weight-bold">3-5 personer</p>
-                  <p class="ml-auto">150,-</p>
+                  <p class="ml-auto">Efter aftale</p>
                 </div>
                 <hr class="w-100 serviceshr">
                 <div class="d-flex servicespriser">
                   <p class="font-weight-bold">6-8 personer</p>
-                  <p class="ml-auto">150,-</p>
+                  <p class="ml-auto">Efter aftale</p>
                 </div>
                 <hr class="w-100 serviceshr">
+                <p class="text-center">Kontakt os for mere information.</p>
+                <p class="text-center"><a href="#booking" class="udfyldform">Udfyld formularen</a> og vi vender tilbage!</p>
               </div>
             </div>
 
@@ -158,14 +165,16 @@
                 <p class="text-center">Klipning af større antal personer ved den lokation du ønsker</p>
                 <div class="d-flex servicespriser">
                   <p class="font-weight-bold">10-20 personer</p>
-                  <p class="ml-auto">150,-</p>
+                  <p class="ml-auto">Efter aftale</p>
                 </div>
                 <hr class="w-100 serviceshr">
                 <div class="d-flex servicespriser">
                   <p class="font-weight-bold">21-30 personer</p>
-                  <p class="ml-auto">150,-</p>
+                  <p class="ml-auto">Efter aftale</p>
                 </div>
                 <hr class="w-100 serviceshr">
+                <p class="text-center">Kontakt os for mere information.</p>
+                <p class="text-center"><a href="#booking" class="udfyldform">Udfyld formularen</a> og vi vender tilbage!</p>
               </div>
             </div>
           </div> <!-- slut row -->
@@ -248,70 +257,73 @@
         <form class="w-50 mx-auto mt-5">
           <div class="form-group">
             <label for="navn">Fulde navn</label>
-            <input type="text" name="navn" value="" placeholder="Skriv navn her" class="form-control">
+            <input type="text" name="navn" value="" placeholder="Skriv navn her" required class="form-control navnmobil">
+            <p class="navnmobilerror text-danger"></p>
           </div>
 
           <div class="form-group">
-            <label for="navn">Telefonnummer</label>
-            <input type="tel" name="navn" value="" placeholder="Skriv telefonnummer her" class="form-control">
+            <label for="nummer">Telefonnummer</label>
+            <input type="tel" name="nummer" value="" placeholder="Skriv telefonnummer her" required class="form-control nummermobil">
+            <p class="nummermobilerror text-danger"></p>
           </div>
 
           <div class="form-group">
-            <label for="navn">Email</label>
-            <input type="email" name="navn" value="" placeholder="name@example.com" class="form-control">
+            <label for="email">Email</label>
+            <input type="email" placeholder="name@example.com" required class="form-control">
           </div>
 
           <div class="form-group">
             <label for="service">Valg af service</label>
             <select class="form-control" id="valgafservice">
-              <option disabled selected>Vælg service</option>
+              <option value="none" selected disabled>Vælg service</option>
               <option value="enPerson">En Person</option>
               <option value="familie">Familie</option>
               <option value="institution">Institution</option>
-              option
             </select>
           </div>
 
           <div class="enperson-radios mb-2">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="dame" id="dame-radio" value="dame">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="dame-radio" value="dame">
               <label class="form-check-label" for="dame">Dame</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="herre" id="herre-radio" value="herre">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="herre-radio" value="herre">
               <label class="form-check-label" for="herre">Herre</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="barn" id="barn-radio" value="barn">
-              <label class="form-check-label" for="inlineRadio2">Barn</label>
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="barn-radio" value="barn">
+              <label class="form-check-label" for="barn">Barn</label>
             </div>
           </div>
 
           <div class="familie-radios mb-2">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="3-5Personer" id="3-5Personer" value="3-5Personer">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="3-5Personer" value="3-5Personer">
               <label class="form-check-label" for="3-5Personer">3-5 personer</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="6-8Personer" id="6-8Personer" value="6-8Personer">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="6-8Personer" value="6-8Personer">
               <label class="form-check-label" for="herre">6-8 personer</label>
             </div>
           </div>
 
           <div class="institution-radios mb-2">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="10-20Personer" id="10-20Personer" value="10-20Personer">
-              <label class="form-check-label" for="3-5Personer">10-20 personer</label>
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="10-20Personer" value="10-20Personer">
+              <label class="form-check-label">10-20 personer</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="21-30Personer" id="21-30Personer" value="21-30Personer">
-              <label class="form-check-label" for="herre">21-30 personer</label>
+              <input class="form-check-input" type="radio" name="inlineRadioOptions"  id="21-30Personer" value="21-30personer">
+              <label class="form-check-label">21-30 personer</label>
             </div>
           </div>
 
+          <p class="text-danger serviceerror"></p>
+
           <div class="form-group">
             <label for="service">Valg af frisør</label>
-            <select class="form-control" id="valgafservice">
+            <select class="form-control" id="valgaffrisør">
               <option>Irrelevant</option>
               <option>Mufak Khalifa</option>
               <option>Josefine Pawsø</option>
@@ -321,8 +333,10 @@
           <div class="form-group">
             <label for="navn" class="m-0">Lokation</label>
             <small class="form-text text-muted m-0">Gade/husnummer/etage/postnummer</small>
-            <input type="text" name="lokation" value="" class="form-control">
+            <input type="text" name="lokation" value="" class="form-control formlokation">
           </div>
+
+          <p class="text-danger lokationerorr"></p>
 
           <div class="form-group">
             <label for="date">Dato</label>
@@ -339,7 +353,10 @@
             <label class="form-check-label" for="nyhedsbrev">Tilmeld til nyhedsbrev</label>
           </div>
 
-          <button type="submit" name="button" class="btn w-100 mt-4 mb-5 mobilbtn" data-aos="fade-up"><b>Book din tid</b></button>
+          <div data-aos="fade-up">
+            <button type="submit" name="button" class="btn w-100 mt-4 mobilbtn"><b>Book din tid</b></button>
+            <p class="mb-5 mobilikkeudfyldt text-danger"></p>
+          </div>
         </form>
       </section>
     </main>
